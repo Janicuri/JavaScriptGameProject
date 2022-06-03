@@ -1,0 +1,66 @@
+<html>
+    <head>
+<style>
+body{
+    background-color: cornflowerblue;
+    text-align: center;
+    
+}
+#container{
+    color:gold;
+    text-align: center;
+
+    
+}
+canvas{
+    border:1px solid black;
+    background-color: black;
+}
+button{
+    height: 50px;
+    background-color:darkcyan;
+    width: 150px;
+    height: 50px;
+}
+button:hover{
+    background-color:orangered;
+}
+#p2{
+position: relative;
+left:400px
+
+}
+#para{
+    display: flex;
+    float: auto;
+    justify-content:space-around;
+    color :rgb(255, 251, 0);
+}
+#p1{
+    text-align: end;
+}
+input{
+    width: 200px; 
+    height:30px ;
+    text-align: center;
+}
+
+</style>
+    </head>
+    <body>
+        <h3 id="h1"></h3>
+        <input type="number" id = "input" placeholder="Score to win">
+        <div id = "para">
+        <p id = "p1">hey</p>
+        <p id = "p2">hey</p>
+        <br><br>
+        </div>
+        <div class="container" id = "container">
+            <canvas id = "canvas" width = "600" height="600px"></canvas>
+            <br><br>
+            <button onclick="start()" id = "btn">Start</button>
+        </div>
+        
+        <script src="dualplayer.js"></script>
+    </body>
+</html>

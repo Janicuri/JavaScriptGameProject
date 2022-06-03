@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style>
+canvas{
+    border: 1px solid black;
+    background-image: url("Images/background.png");
+}
+body{
+    text-align: center;
+    background-color: black;
+}
+img{
+    display: none;
+}
+.pass{
+    display: flex;
+    justify-content: space-around;
+}
+        </style>
+    </head>
+    <body id ="bd">
+        <img src="Images/lowerpipe.png" id = "lowerpipe">
+        <img src="Images/upperpipe.png" id = "upperpipe">
+        <img src="Images/bird.png" id="bird">
+        <div class="pass">
+            
+            <p style="color: white;" id="para"></p>
+            <p id="graph" style="color: white;"></p>
+        
+        </div>
+    <div id = "container">
+<br><br>
+<canvas id = "canvas"width = "600px" height="600px"></canvas>
+<h6 style="color: cornflowerblue;">Game designer : Joan Çuri</h6>
+    </div>
+<script src="point.js"></script> 
+    </body>
+</html>

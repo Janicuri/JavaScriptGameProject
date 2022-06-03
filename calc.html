@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <style>
+        body{
+            text-align:center;
+            background-color: cornflowerblue;
+        }
+        #buttons button{
+            border-radius: 50px;
+            font-size: 30px;
+            color: white;
+        }
+        #inp{
+            text-align: center;
+            font-size: 50px;
+            background-color:olive
+        }
+        #buttons{
+            text-align: center;
+            border: 15px solid black;
+            background-color: gray;
+        }
+        #split{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+<div id ="split">
+    <div></div>
+    <div id= "buttons">
+        <br><br><br><br>
+<input type="number" id="inp" style="width:300px;height: 100px;text-size-adjust: 30px; " >
+<br><br>
+<button style="width: 100px; height: 100px; background-color: black;"id="one" onclick="add('1')">1</button>
+<button style="width: 100px; height: 100px; background-color: black;"id="two" onclick="add('2')">2</button>
+<button style="width: 100px; height: 100px;background-color: black;"id="three" onclick="add('3')">3</button>
+<button style="width: 100px; height: 100px; background-color: orange;"id="devide" onclick="changeOperator('/')">:</button>
+
+<br>
+<button style="width: 100px; height: 100px;background-color: black;"id="four" onclick="add('4')">4</button>
+<button style="width: 100px; height: 100px;background-color: black;"id="five" onclick="add('5')">5</button>
+<button style="width: 100px; height: 100px;background-color: black;"id="six" onclick="add('6')">6</button>
+<button style="width: 100px; height: 100px; background-color: orange;"id="times" onclick="changeOperator('*')">*</button>
+<br>
+<button style="width: 100px; height: 100px;background-color: black;"id="seven" onclick="add('7')">7</button>
+<button style="width: 100px; height: 100px;background-color: black;"id="eight" onclick="add('8')">8</button>
+<button style="width: 100px; height: 100px;background-color: black;"id="nine" onclick="add('9')">9</button>
+<button style="width: 100px; height: 100px; background-color: orange;"id="minus" onclick="changeOperator('-')">-</button>
+<br>
+
+<button style="width: 100px; height: 100px;background-color: black;"id="zero" onclick="add('0')">0</button>
+<button style="width: 100px; height: 100px; background-color: black;"id="point" onclick="add('.')">.</button>
+<button style="width: 100px; height: 100px; background-color: orange;"id="equal" onclick="changeOperator('=')">=</button>
+<button style="width: 100px; height: 100px; background-color: orange;"id="plus" onclick="changeOperator('+')">+</button>
+<br>
+<button style="width: 100px; height: 100px; background-color: orange;"  onclick="changeOperator('clear')">C</button>
+<br>
+<br>
+    </div>
+    <div></div>
+    </div>
+    <script>
+        let key = false;
+        let lastopera = "";
+        let temp1;
+        let temp2;
+        let result=0;
+        let numbers = []
+        let len = numbers.length
+        let curent = "";
+        let i = 0
+        let pointer = true
+function add(string){
+    if (string == "."&& pointer == true){
+        numbers.push(string)
+        for (i = 0;i<len;i++){
+        curent += numbers[i]
+    }
+        pointer = false
+
+    }
+    else if (string != "."){
+    numbers.push(string)
+    len = numbers.length
+    for (i = 0;i<len;i++){
+        curent += numbers[i] 
+    }
+}
+    document.getElementById("inp").value = parseFloat(curent)
+    curent = ""
+
+}
+function empty(){
+    for (var j = 0;j<len;j++){
+       
+numbers.pop()
+}
+    document.getElementById("inp").value = ""
+}
+
+
+
+function hell_ya(){
+    if(lastopera == "/"){
+        temp2 =parseInt(document.getElementById("inp").value)
+            empty()
+            result = temp1 /temp2
+            temp1 = result
+        document.getElementById("inp").value = temp1
+    }
+    else if(lastopera == "+"){
+        temp2 =parseInt(document.getElementById("inp").value)
+            empty()
+            result = temp1 + temp2
+            temp1 = result
+        document.getElementById("inp").value = temp1
+    }
+    else if(lastopera == "-"){
+        temp2 =parseInt(document.getElementById("inp").value)
+            empty()
+            result = temp1 -temp2
+            temp1 = result
+        document.getElementById("inp").value = temp1
+
+}
+else if(lastopera == "*"){
+    temp2 =parseInt(document.getElementById("inp").value)
+            empty()
+            result = temp1 *temp2
+            temp1 = result
+        document.getElementById("inp").value = temp1
+
+}
+}
+
+function changeOperator(operator){
+    if(operator == "/"){
+        lastopera = "/"
+        if (key== false){
+        temp1 = document.getElementById("inp").value
+        empty()
+        pointer = true
+        }
+        
+    }
+    else if(operator == "*"){
+        lastopera = "*"
+        if (key== false){
+        temp1 = document.getElementById("inp").value
+        empty()
+        pointer = true
+        }
+        
+    }
+    else if(operator == "+"){
+        lastopera = "+"
+        if (key== false){
+        temp1 = parseFloat(document.getElementById("inp").value)
+    empty()    
+    pointer = true
+    }
+        
+
+}
+else if(operator == "-"){
+    lastopera = "-"
+    if (key== false){
+        temp1 = document.getElementById("inp").value
+        empty()
+        pointer = true
+    }
+        
+
+}
+else if(operator == "="){
+    if(lastopera == "/"){
+        temp2 =parseInt(document.getElementById("inp").value)
+            empty()
+            result = temp1 /temp2
+            temp1 = result
+        document.getElementById("inp").value = temp1
+    }
+    else if(lastopera == "+"){
+        temp2 =parseInt(document.getElementById("inp").value)
+            empty()
+            result = temp1 + temp2
+            temp1 = result
+        document.getElementById("inp").value = temp1
+    }
+    else if(lastopera == "-"){
+        temp2 =parseInt(document.getElementById("inp").value)
+            empty()
+            result = temp1 -temp2
+            temp1 = result
+        document.getElementById("inp").value = temp1
+
+}
+else if(lastopera == "*"){
+    temp2 =parseInt(document.getElementById("inp").value)
+            empty()
+            result = temp1 *temp2
+            temp1 = result
+        document.getElementById("inp").value = temp1
+
+}
+
+    
+}
+else if(operator == "clear"){
+    empty()
+    key = false
+    temp1 = 0
+    temp2 = 0
+    result = 0
+    pointer = true
+
+}
+
+}
+document.addEventListener("keydown",function(key){
+    if(key.keyCode == "13"){
+        hell_ya()
+    }
+},true)
+
+</script>
+</body>
+</html>

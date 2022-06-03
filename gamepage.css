@@ -1,0 +1,45 @@
+body{
+    background-color: black;
+    text-align: center;
+    
+}
+
+#Home{
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    
+}
+#flappy{
+    text-align: center;
+    
+}
+a{
+    text-decoration: none;
+}
+p {
+color: white;
+}
+#nintendo{
+text-align: center;
+}
+#platform{
+    text-align: center;
+}
+#dual{
+    text-align: center;
+}
+#PAGE{
+    text-align: center;
+}
+#btns{
+    display: flex;
+    justify-content: space-around;
+}
+button{
+    width: 100px;
+    height: 40px;
+    border-radius: 50px;
+    text-align: center;
+}
+

@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <style>
+            body{
+                text-align: center;
+            
+            }
+            canvas{
+                border:1px solid black;
+
+            }
+            #text{
+display: flex;
+justify-content: space-around;
+            }
+            button{
+                background-color : orange;
+            }
+          
+            
+        </style>
+    </head>
+    <body>
+        <div>     
+                <button id = "btn" onclick="loop()">Start</button>
+        </div>
+        <div id = "container">
+            <canvas id ="canvas" width="700px" height="700px"></canvas>
+            <div id = "text">
+            <h1 id="para"></h1>
+
+            <h1 id="highscore"></h1>
+            </div>
+        </div>
+        <script src="nintendo.js"></script>
+    </body>
+</html>
